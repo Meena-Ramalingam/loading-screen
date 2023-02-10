@@ -1,53 +1,36 @@
 <html>
-<head>
-  <title>PRINTEASE</title>
-  <link rel="icon" type="image/x-icon" href="PRINTEASE.png">
-  <style>
-    #loader {
-        border: 12px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 12px solid #444444;
-        width: 70px;
-        height: 70px;
-           }
-      
-    
-      
-    .center {
-        position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #333;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-</style>
+  <head>
+    <style>
+      body {
+        background-color: #222222;
+        text-align: center;
+        height: 100vh;
+        position: relative;
+      }
 
+      .content {
+        display: none;
+      }
 
+      #loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="PRINTEASE (2).gif" id="loading">
+    <div class="content">
+      <!-- Your page content goes here -->
+    </div>
 
-<script>
-    document.onreadystatechange = function() {
-        if (document.readyState !== "complete") {
-            document.querySelector(
-            "body").style.visibility = "hidden";
-            document.querySelector(
-            "#loader").style.visibility = "visible";
-        } else {
-            document.querySelector(
-            "#loader").style.display = "none";
-            document.querySelector(
-            "body").style.visibility = "visible";
-        }
-    };
-</script></head>
-<div id="loader" class="center"><img src="PRINTEASE (2).gif "></div>
-<body style="background-color: black;"> 
-    
-
-
-</body>
+    <script>
+      setTimeout(function() {
+        document.getElementById("loading").style.display = "none";
+        document.querySelector(".content").style.display = "block";
+      }, 5000);
+    </script>
+  </body>
 </html>
